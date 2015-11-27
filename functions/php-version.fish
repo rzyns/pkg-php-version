@@ -161,7 +161,6 @@ function php-version --description 'function allowing one to switch between PHP 
       return 1
     end
 
-    echo SETTING PHP ROOT: $_PHP_ROOT
     set -g -x PHPRC ""
     test -f "$_PHP_ROOT/etc/php.ini" ; and set -g -x PHPRC "$_PHP_ROOT/etc/php.ini"
     test -d "$_PHP_ROOT/bin"         ; and set -g -x PATH "$_PHP_ROOT/bin" $PATH
