@@ -64,7 +64,7 @@ function php-version --description 'function allowing one to switch between PHP 
   end
 
   # add default Homebrew directories if brew is installed
-  if test -n (command -v brew)
+  if available brew
     set _PHP_VERSIONS (find (brew --cellar) -maxdepth 1 -type d | grep -E 'php[0-9]*$')
   end
 
@@ -156,7 +156,7 @@ function php-version --description 'function allowing one to switch between PHP 
     end
 
     # bail-out if we were unable to find a PHP matching given version
-    if test -z "$_PHP_ROOT" 
+    if test -z "$_PHP_ROOT"
       echo "Sorry, but $PROGRAM_APPNAME was unable to find version '$argv[1]'." >&2
       return 1
     end
